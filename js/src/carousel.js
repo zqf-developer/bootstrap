@@ -20,6 +20,7 @@ import Data from './dom/data'
 import EventHandler from './dom/event-handler'
 import Manipulator from './dom/manipulator'
 import SelectorEngine from './dom/selector-engine'
+import BaseComponent from './base-component'
 
 /**
  * ------------------------------------------------------------------------
@@ -103,8 +104,10 @@ const PointerType = {
  * Class Definition
  * ------------------------------------------------------------------------
  */
-class Carousel {
+class Carousel extends BaseComponent {
   constructor(element, config) {
+    super(element)
+
     this._items = null
     this._interval = null
     this._activeElement = null
@@ -115,7 +118,6 @@ class Carousel {
     this.touchDeltaX = 0
 
     this._config = this._getConfig(config)
-    this._element = element
     this._indicatorsElement = SelectorEngine.findOne(SELECTOR_INDICATORS, this._element)
     this._touchSupported = 'ontouchstart' in document.documentElement || navigator.maxTouchPoints > 0
     this._pointerEvent = Boolean(window.PointerEvent)
@@ -132,6 +134,10 @@ class Carousel {
 
   static get Default() {
     return Default
+  }
+
+  static get DATA_KEY() {
+    return DATA_KEY
   }
 
   // Public
@@ -576,10 +582,6 @@ class Carousel {
     }
 
     event.preventDefault()
-  }
-
-  static getInstance(element) {
-    return Data.getData(element, DATA_KEY)
   }
 }
 

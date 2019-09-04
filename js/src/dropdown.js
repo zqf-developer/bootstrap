@@ -18,6 +18,7 @@ import EventHandler from './dom/event-handler'
 import Manipulator from './dom/manipulator'
 import Popper from 'popper.js'
 import SelectorEngine from './dom/selector-engine'
+import BaseComponent from './base-component'
 
 /**
  * ------------------------------------------------------------------------
@@ -95,9 +96,10 @@ const DefaultType = {
  * ------------------------------------------------------------------------
  */
 
-class Dropdown {
+class Dropdown extends BaseComponent {
   constructor(element, config) {
-    this._element = element
+    super(element)
+
     this._popper = null
     this._config = this._getConfig(config)
     this._menu = this._getMenuElement()
@@ -119,6 +121,10 @@ class Dropdown {
 
   static get DefaultType() {
     return DefaultType
+  }
+
+  static get DATA_KEY() {
+    return DATA_KEY
   }
 
   // Public
@@ -488,10 +494,6 @@ class Dropdown {
     index = index === -1 ? 0 : index
 
     items[index].focus()
-  }
-
-  static getInstance(element) {
-    return Data.getData(element, DATA_KEY)
   }
 }
 

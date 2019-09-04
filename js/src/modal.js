@@ -19,6 +19,7 @@ import Data from './dom/data'
 import EventHandler from './dom/event-handler'
 import Manipulator from './dom/manipulator'
 import SelectorEngine from './dom/selector-engine'
+import BaseComponent from './base-component'
 
 /**
  * ------------------------------------------------------------------------
@@ -80,10 +81,11 @@ const SELECTOR_STICKY_CONTENT = '.sticky-top'
  * ------------------------------------------------------------------------
  */
 
-class Modal {
+class Modal extends BaseComponent {
   constructor(element, config) {
+    super(element)
+
     this._config = this._getConfig(config)
-    this._element = element
     this._dialog = SelectorEngine.findOne(SELECTOR_DIALOG, element)
     this._backdrop = null
     this._isShown = false
@@ -102,6 +104,10 @@ class Modal {
 
   static get Default() {
     return Default
+  }
+
+  static get DATA_KEY() {
+    return DATA_KEY
   }
 
   // Public
@@ -561,10 +567,6 @@ class Modal {
         data.show(relatedTarget)
       }
     })
-  }
-
-  static getInstance(element) {
-    return Data.getData(element, DATA_KEY)
   }
 }
 

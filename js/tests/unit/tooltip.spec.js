@@ -16,7 +16,7 @@ describe('Tooltip', () => {
     clearFixture()
 
     document.querySelectorAll('.tooltip').forEach(tooltipEl => {
-      document.body.removeChild(tooltipEl)
+      tooltipEl.remove()
     })
   })
 
@@ -397,7 +397,7 @@ describe('Tooltip', () => {
         tooltipEl.removeEventListener('shown.bs.tooltip', firstCallback)
         let tooltipShown = document.querySelector('.tooltip')
 
-        tooltipShown.parentNode.removeChild(tooltipShown)
+        tooltipShown.remove()
 
         tooltipEl.addEventListener('shown.bs.tooltip', () => {
           tooltipShown = document.querySelector('.tooltip')
@@ -871,7 +871,7 @@ describe('Tooltip', () => {
         html: true
       })
 
-      tooltip.getTipElement().appendChild(childContent)
+      tooltip.getTipElement().append(childContent)
       tooltip.setElementContent(tooltip.getTipElement(), childContent)
 
       expect().nothing()

@@ -395,8 +395,8 @@ class Carousel {
   _setActiveIndicatorElement(element) {
     if (this._indicatorsElement) {
       const indicators = SelectorEngine.find(SELECTOR_ACTIVE, this._indicatorsElement)
-      for (const element of indicators) {
-        element.classList.remove(CLASS_NAME_ACTIVE)
+      for (let i = 0; i < indicators.length; i++) {
+        indicators[i].classList.remove(CLASS_NAME_ACTIVE)
       }
 
       const nextIndicator = this._indicatorsElement.children[
@@ -594,8 +594,8 @@ EventHandler.on(document, EVENT_CLICK_DATA_API, SELECTOR_DATA_SLIDE, Carousel.da
 EventHandler.on(window, EVENT_LOAD_DATA_API, () => {
   const carousels = SelectorEngine.find(SELECTOR_DATA_RIDE)
 
-  for (const element of carousels) {
-    Carousel.carouselInterface(element, Data.getData(element, DATA_KEY))
+  for (let i = 0; i < carousels.length; i++) {
+    Carousel.carouselInterface(carousels[i], Data.getData(carousels[i], DATA_KEY))
   }
 })
 

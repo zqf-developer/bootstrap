@@ -375,11 +375,11 @@ class Dropdown {
 
     const toggles = SelectorEngine.find(SELECTOR_DATA_TOGGLE)
 
-    for (const element of toggles) {
-      const parent = Dropdown.getParentFromElement(element)
-      const context = Data.getData(element, DATA_KEY)
+    for (let i = 0; i < toggles.length; i++) {
+      const parent = Dropdown.getParentFromElement(toggles[i])
+      const context = Data.getData(toggles[i], DATA_KEY)
       const relatedTarget = {
-        relatedTarget: element
+        relatedTarget: toggles[i]
       }
 
       if (event && event.type === 'click') {
@@ -391,7 +391,7 @@ class Dropdown {
       }
 
       const dropdownMenu = context._menu
-      if (!element.classList.contains(CLASS_NAME_SHOW)) {
+      if (!toggles[i].classList.contains(CLASS_NAME_SHOW)) {
         continue
       }
 
@@ -414,14 +414,14 @@ class Dropdown {
           .forEach(elem => EventHandler.off(elem, 'mouseover', null, noop()))
       }
 
-      element.setAttribute('aria-expanded', 'false')
+      toggles[i].setAttribute('aria-expanded', 'false')
 
       if (context._popper) {
         context._popper.destroy()
       }
 
       dropdownMenu.classList.remove(CLASS_NAME_SHOW)
-      element.classList.remove(CLASS_NAME_SHOW)
+      toggles[i].classList.remove(CLASS_NAME_SHOW)
       EventHandler.trigger(parent, EVENT_HIDDEN, relatedTarget)
     }
   }

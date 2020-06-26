@@ -15,7 +15,7 @@ direction: rtl
       <img src="/docs/5.0/assets/brand/bootstrap-logo-white.svg" width="38" height="30" class="me-3" alt="Bootstrap" loading="lazy">
       ورقة غش
     </h1>
-    <a href="{{< docsref "/examples/cheatsheet" >}}" class="ml-auto link-light" hreflang="en">جدول بيانات LTR</a>
+    <a href="{{< docsref "/examples/cheatsheet" >}}" class="ms-auto link-light" hreflang="en">جدول بيانات LTR</a>
   </div>
 </header>
 <aside class="bd-aside sticky-xl-top text-muted align-self-start mb-3 mb-xl-5 px-3 px-xl-0">
@@ -24,7 +24,7 @@ direction: rtl
     <ul class="list-unstyled">
       <li class="my-2">
         <a class="collapsed font-weight-bold d-inline-flex align-items-center" data-toggle="collapse" role="button" aria-expanded="false" href="#contents-collapse" aria-controls="contents-collapse">محتويات</a>
-        <ul class="list-unstyled pl-3 collapse" id="contents-collapse">
+        <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
           <li><a href="#typography">الطباعة</a></li>
           <li><a href="#images">صور</a></li>
           <li><a href="#tables">جدول</a></li>
@@ -33,7 +33,7 @@ direction: rtl
       </li>
       <li class="my-2">
         <a class="collapsed font-weight-bold d-inline-flex align-items-center" data-toggle="collapse" role="button" aria-expanded="false" href="#forms-collapse" aria-controls="forms-collapse">نماذج</a>
-        <ul class="list-unstyled pl-3 collapse" id="forms-collapse">
+        <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
           <li><a href="#overview">نظرة عامة</a></li>
           <li><a href="#disabled-forms">أشكال المعاقين</a></li>
           <li><a href="#sizing">تحجيم</a></li>
@@ -43,7 +43,7 @@ direction: rtl
       </li>
       <li class="my-2">
         <a class="collapsed font-weight-bold d-inline-flex align-items-center" data-toggle="collapse" role="button" aria-expanded="false" href="#components-collapse" aria-controls="components-collapse">مكونات</a>
-        <ul class="list-unstyled pl-3 collapse" id="components-collapse">
+        <ul class="list-unstyled ps-3 collapse" id="components-collapse">
           <li><a href="#alerts">إنذار</a></li>
           <li><a href="#badge">شارة</a></li>
           <li><a href="#breadcrumb">مسار التنقل</a></li>
@@ -1028,11 +1028,11 @@ direction: rtl
 
         {{< example show_markup="false" >}}
         <div class="btn-group w-100 align-items-center justify-content-between flex-wrap">
-          <div class="dropright">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="droprightMenuButton" data-toggle="dropdown" aria-expanded="false">
-              زر Dropright
+          <div class="dropend">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropendMenuButton" data-toggle="dropdown" aria-expanded="false">
+              زر Dropend
             </button>
-            <ul class="dropdown-menu" aria-labelledby="droprightMenuButton">
+            <ul class="dropdown-menu" aria-labelledby="dropendMenuButton">
               <li><h6 class="dropdown-header">رأس القائمة المنسدلة</h6></li>
               <li><a class="dropdown-item" href="#">عمل</a></li>
               <li><a class="dropdown-item" href="#">عمل آخر</a></li>
@@ -1054,11 +1054,11 @@ direction: rtl
               <li><a class="dropdown-item" href="#">رابط منفصل</a></li>
             </ul>
           </div>
-          <div class="dropleft">
-            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropleftMenuButton" data-toggle="dropdown" aria-expanded="false">
-              زر Dropleft
+          <div class="dropstart">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropstartMenuButton" data-toggle="dropdown" aria-expanded="false">
+              زر Dropstart
             </button>
-            <ul class="dropdown-menu" aria-labelledby="dropleftMenuButton">
+            <ul class="dropdown-menu" aria-labelledby="dropstartMenuButton">
               <li><h6 class="dropdown-header">رأس القائمة المنسدلة</h6></li>
               <li><a class="dropdown-item" href="#">عمل</a></li>
               <li><a class="dropdown-item" href="#">عمل آخر</a></li>
@@ -1074,9 +1074,9 @@ direction: rtl
         <div class="btn-group">
           <div class="dropdown">
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownRightMenuButton" data-toggle="dropdown" aria-expanded="false">
-              قائمة بمحاذاة اليمين
+              قائمة بمحاذاة النهاية
             </button>
-            <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownRightMenuButton">
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownRightMenuButton">
               <li><h6 class="dropdown-header">رأس القائمة المنسدلة</h6></li>
               <li><a class="dropdown-item" href="#">عمل</a></li>
               <li><a class="dropdown-item" href="#">عمل آخر</a></li>
@@ -1221,7 +1221,7 @@ direction: rtl
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">الصفحة الرئيسية</a>
                 </li>
@@ -1260,7 +1260,7 @@ direction: rtl
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent2">
-              <ul class="navbar-nav mr-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="#">الصفحة الرئيسية</a>
                 </li>
@@ -1366,13 +1366,13 @@ direction: rtl
           انبثاق في الأعلى
         </button>
         <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="right" data-content="يرتبط لفرنسا ذلك تم, ان إعلان أدوات إنطلاق.">
-          انبثاق على اليمين
+          popover في النهاية
         </button>
         <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="bottom" data-content="يرتبط لفرنسا ذلك تم, ان إعلان أدوات إنطلاق.">
           انبثاق في الأسفل
         </button>
         <button type="button" class="btn btn-secondary" data-container="body" data-toggle="popover" data-placement="left" data-content="يرتبط لفرنسا ذلك تم, ان إعلان أدوات إنطلاق.">
-          انبثاق على اليسار
+          popover عند البدء
         </button>
         {{< /example >}}
       </div>
@@ -1515,9 +1515,9 @@ direction: rtl
       <div>
         {{< example show_markup="false" class="tooltip-demo" >}}
         <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="تلميح في الأعلى">تلميح في الأعلى</button>
-        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="تلميح على اليمين">تلميح على اليمين</button>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="تلميح في النهاية">تلميح في النهاية</button>
         <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="تلميح في الأسفل">تلميح في الأسفل</button>
-        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="تلميح على اليسار">تلميح على اليسار</button>
+        <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="تلميح عند البدء">تلميح عند البدء</button>
         <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-html="true" title="<em>تلميح</em> <u>مع</u> <b>HTML</b>">تلميح مع HTML</button>
         {{< /example >}}
       </div>

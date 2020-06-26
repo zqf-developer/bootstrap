@@ -47,7 +47,7 @@ Using [RTLCSS value directives](https://rtlcss.com/learn/usage-guide/value-direc
 For example to decrease the weight for `$font-weight-bold` throughout the codebase, you may use the `/*rtl: {value}*/` syntax:
 
 {{< highlight scss >}}
-$font-weight-bold: 700 #{/*rtl:600*/} !default;
+$font-weight-bold: 700 #{/* rtl:600 */} !default;
 {{< /highlight >}}
 
 Output:
@@ -55,7 +55,7 @@ Output:
 {{< highlight css >}}
 /* bootstrap.css */
 dt {
-  font-weight: 700 /*rtl:600*/;
+  font-weight: 700 /* rtl:600 */;
 }
 
 /* bootstrap.rtl.css */
@@ -72,7 +72,7 @@ For example, if you use [Neue Helvetica®](https://www.linotype.com/1245395/neue
 
 {{< highlight scss >}}
 $font-family-sans-serif:
-  Helvetica Neue #{"/*rtl:insert:Arabic*/"} Webfont,
+  Helvetica Neue #{"/* rtl:insert:Arabic */"} Webfont,
   // Safari for macOS and iOS (San Francisco)
   -apple-system,
   // Chrome < 56 for macOS (San Francisco)
@@ -93,13 +93,7 @@ $font-family-sans-serif:
 
 ## The breadcrumb case
 
-At the time of writing, the [breadcrumb]({{< docsref "/components/breadcrumb" >}}/#changing-the-separator) separator is the only edge case Bootstrap cannot handle automagically:
-
-- our current separator is a `/` — a single character which doesn't require to be flipped in RTL,
-- the separator is customizable using the `$breadcrumb-divider` variable to use another character, or an embedded SVG icon,
-- if you use a bidirectional character (like a chevron `>`), browsers will likely flip it by themselves.
-
-Since our default does not require flipping, Bootstrap does not handle flipping the breadcrumb separator — you might have to.
+The [breadcrumb separator]({{< docsref "/components/breadcrumb" >}}/#changing-the-separator) is the only case requiring its own brand new variable— namely `$breadcrumb-divider-flipped` —defaulting to `$breadcrumb-divider`.
 
 ## Additional resources
 

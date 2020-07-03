@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.3.1): util/index.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Bootstrap (v5.0.0-alpha1): util/index.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
@@ -26,7 +26,7 @@ const toType = obj => {
 
 const getUID = prefix => {
   do {
-    prefix += ~~(Math.random() * MAX_UID) // "~~" acts like a faster Math.floor() here
+    prefix += Math.floor(Math.random() * MAX_UID)
   } while (document.getElementById(prefix))
 
   return prefix
@@ -110,21 +110,20 @@ const emulateTransitionEnd = (element, duration) => {
 }
 
 const typeCheckConfig = (componentName, config, configTypes) => {
-  Object.keys(configTypes)
-    .forEach(property => {
-      const expectedTypes = configTypes[property]
-      const value = config[property]
-      const valueType = value && isElement(value) ?
-        'element' :
-        toType(value)
+  Object.keys(configTypes).forEach(property => {
+    const expectedTypes = configTypes[property]
+    const value = config[property]
+    const valueType = value && isElement(value) ?
+      'element' :
+      toType(value)
 
-      if (!new RegExp(expectedTypes).test(valueType)) {
-        throw new Error(
-          `${componentName.toUpperCase()}: ` +
-          `Option "${property}" provided type "${valueType}" ` +
-          `but expected type "${expectedTypes}".`)
-      }
-    })
+    if (!new RegExp(expectedTypes).test(valueType)) {
+      throw new Error(
+        `${componentName.toUpperCase()}: ` +
+        `Option "${property}" provided type "${valueType}" ` +
+        `but expected type "${expectedTypes}".`)
+    }
+  })
 }
 
 const isVisible = element => {

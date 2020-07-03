@@ -1,7 +1,7 @@
 /**
  * --------------------------------------------------------------------------
- * Bootstrap (v4.3.1): modal.js
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Bootstrap (v5.0.0-alpha1): modal.js
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  * --------------------------------------------------------------------------
  */
 
@@ -27,7 +27,7 @@ import SelectorEngine from './dom/selector-engine'
  */
 
 const NAME = 'modal'
-const VERSION = '4.3.1'
+const VERSION = '5.0.0-alpha1'
 const DATA_KEY = 'bs.modal'
 const EVENT_KEY = `.${DATA_KEY}`
 const DATA_API_KEY = '.data-api'
@@ -248,6 +248,7 @@ class Modal {
     this._element.style.display = 'block'
     this._element.removeAttribute('aria-hidden')
     this._element.setAttribute('aria-modal', true)
+    this._element.setAttribute('role', 'dialog')
     this._element.scrollTop = 0
 
     if (modalBody) {
@@ -323,6 +324,7 @@ class Modal {
     this._element.style.display = 'none'
     this._element.setAttribute('aria-hidden', true)
     this._element.removeAttribute('aria-modal')
+    this._element.removeAttribute('role')
     this._isTransitioning = false
     this._showBackdrop(() => {
       document.body.classList.remove(CLASS_NAME_OPEN)
@@ -407,10 +409,23 @@ class Modal {
         return
       }
 
+      const isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight
+
+      if (!isModalOverflowing) {
+        this._element.style.overflowY = 'hidden'
+      }
+
       this._element.classList.add(CLASS_NAME_STATIC)
-      const modalTransitionDuration = getTransitionDurationFromElement(this._element)
+      const modalTransitionDuration = getTransitionDurationFromElement(this._dialog)
+      EventHandler.off(this._element, TRANSITION_END)
       EventHandler.one(this._element, TRANSITION_END, () => {
         this._element.classList.remove(CLASS_NAME_STATIC)
+        if (!isModalOverflowing) {
+          EventHandler.one(this._element, TRANSITION_END, () => {
+            this._element.style.overflowY = ''
+          })
+          emulateTransitionEnd(this._element, modalTransitionDuration)
+        }
       })
       emulateTransitionEnd(this._element, modalTransitionDuration)
       this._element.focus()
@@ -442,9 +457,8 @@ class Modal {
   }
 
   _checkScrollbar() {
-    const { left, right } = document.body.getBoundingClientRect()
-
-    this._isBodyOverflowing = Math.floor(left + right) < window.innerWidth
+    const rect = document.body.getBoundingClientRect()
+    this._isBodyOverflowing = Math.round(rect.left + rect.right) < window.innerWidth
     this._scrollbarWidth = this._getScrollbarWidth()
   }
 

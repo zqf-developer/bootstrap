@@ -419,6 +419,7 @@ Our first demo is for `.modal-left`, which also has a vertical `.nav-pills` comp
   ...
 </div>
 {{< /highlight >}}
+
 ### Right modal
 
 In this `.modal-right` example, we've removed the default `.modal-body` padding with `.p-0` and added a linked list group within.

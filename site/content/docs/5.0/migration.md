@@ -47,6 +47,10 @@ toc: true
 
 - Added new `null` variables for `font-size`, `font-weight`, `color`, and `:hover` `color` to the `.nav-link` class.
 
+#### Pagination
+
+- Added focus styles to the pagination that match our buttons.
+
 #### Popovers
 
 - Renamed `whiteList` option to `allowList`.

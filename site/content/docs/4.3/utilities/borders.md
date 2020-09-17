@@ -48,24 +48,24 @@ Change the border color using utilities built on our theme colors.
 Add classes to an element to easily round its corners.
 
 {{< example >}}
-{{< placeholder width="75" height="75" class="br" title="Example rounded image" >}}
-{{< placeholder width="75" height="75" class="br-top" title="Example top rounded image" >}}
-{{< placeholder width="75" height="75" class="br-right" title="Example right rounded image" >}}
-{{< placeholder width="75" height="75" class="br-bottom" title="Example bottom rounded image" >}}
-{{< placeholder width="75" height="75" class="br-left" title="Example left rounded image" >}}
-{{< placeholder width="75" height="75" class="br-circle" title="Completely round image" >}}
-{{< placeholder width="150" height="75" class="br-pill" title="Rounded pill image" >}}
-{{< placeholder width="75" height="75" class="br-0" title="Example non-rounded image (overrides rounding applied elsewhere)" >}}
+{{< placeholder width="75" height="75" class="radius" title="Example rounded image" >}}
+{{< placeholder width="75" height="75" class="radius-top" title="Example top rounded image" >}}
+{{< placeholder width="75" height="75" class="radius-right" title="Example right rounded image" >}}
+{{< placeholder width="75" height="75" class="radius-bottom" title="Example bottom rounded image" >}}
+{{< placeholder width="75" height="75" class="radius-left" title="Example left rounded image" >}}
+{{< placeholder width="75" height="75" class="radius-circle" title="Completely round image" >}}
+{{< placeholder width="150" height="75" class="radius-pill" title="Rounded pill image" >}}
+{{< placeholder width="75" height="75" class="radius-0" title="Example non-rounded image (overrides rounding applied elsewhere)" >}}
 {{< /example >}}
 
 
 ## Sizes
 
-Use the border-radius factors for larger or smaller border-radius sizes. Sizes range from `0` to `3`.
+Use the `border-radius` factors for larger or smaller rounded corners. Sizes range from `0` to `3`.
 
 {{< example >}}
-{{< placeholder width="75" height="75" class="br-0" title="Example non-rounded image" >}}
-{{< placeholder width="75" height="75" class="br-1" title="Example small rounded image" >}}
-{{< placeholder width="75" height="75" class="br-2" title="Example default rounded image" >}}
-{{< placeholder width="75" height="75" class="br-3" title="Example large rounded image" >}}
+{{< placeholder width="75" height="75" class="radius-0" title="Example non-rounded image" >}}
+{{< placeholder width="75" height="75" class="radius-1" title="Example small rounded image" >}}
+{{< placeholder width="75" height="75" class="radius-2" title="Example default rounded image" >}}
+{{< placeholder width="75" height="75" class="radius-3" title="Example large rounded image" >}}
 {{< /example >}}

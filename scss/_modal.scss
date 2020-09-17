@@ -256,24 +256,16 @@
     overflow-y: auto;
   }
 
-  &.modal.show {
+  &.modal.fade {
     .modal-dialog {
       transform: translateX(0);
     }
   }
-}
-
-.modal.modal-right {
-  .modal-dialog {
-    margin-left: auto;
-    transform: translateX(100%);
+  &.modal.show {
+    .modal-dialog {
+      transform: none;
+    }
   }
-
-  // &.show {
-  //   .modal-dialog {
-  //     transform: translateX(0);
-  //   }
-  // }
 }
 
 .modal.modal-left {
@@ -282,9 +274,11 @@
     transform: translateX(-100%);
   }
 
-  // &.show {
-  //   .modal-dialog {
-  //     transform: translateX(0);
-  //   }
-  // }
+}
+
+.modal.modal-right {
+  .modal-dialog {
+    margin-left: auto;
+    transform: translateX(100%);
+  }
 }

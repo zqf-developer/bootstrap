@@ -2,6 +2,7 @@ languageCode:           "en"
 title:                  "Bootstrap"
 baseURL:                "https://v5.getbootstrap.com"
 enableInlineShortcodes: true
+enableGitInfo:          true
 
 markup:
   goldmark:

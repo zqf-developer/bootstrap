@@ -16,6 +16,15 @@ toc: true
 - The `scale-color()` will either tint or shade a color depending on whether its weight parameter is positive or negative.
 - See [this PR](https://github.com/twbs/bootstrap/pull/30622) for more details.
 
+### Fonts and text
+
+- Added `.fs-*` utilities for `font-size`.
+- Renamed `.font-weight-*` utilities as `.fw-*` for brevity.
+- Renamed `.font-style-*` utilities as `.fst-*` for brevity.
+- Renamed `.text-monospace` to `.font-monospace`.
+- New `line-height` utilities: `.lh-1`, `.lh-sm`, `.lh-base` and `.lh-lg`. See [here]({{< docsref "/utilities/text#line-height" >}}).
+- Removed `.text-hide` as it's an antiquated method for hiding text that shouldn't be used anymore.
+
 ## v5.0.0-alpha2
 
 ### Sass
@@ -313,15 +322,6 @@ Badges were overhauled to better differentiate themselves from buttons and to be
 ### Grid
 
 - Decreased the number of responsive order utilities per breakpoint. The highest order utility with a number now is `.order-5` instead of `.order-12`. [See #28874](https://github.com/twbs/bootstrap/pull/28874).
-
-### Fonts and text
-
-- Added `.fs-*` utilities for `font-size`.
-- Renamed `.font-weight-*` utilities as `.fw-*` for brevity.
-- Renamed `.font-style-*` utilities as `.fst-*` for brevity.
-- Renamed `.text-monospace` to `.font-monospace`.
-- New `line-height` utilities: `.lh-1`, `.lh-sm`, `.lh-base` and `.lh-lg`. See [here]({{< docsref "/utilities/text#line-height" >}}).
-- Removed `.text-hide` as it's an antiquated method for hiding text that shouldn't be used anymore.
 
 ### Misc
 

@@ -448,9 +448,7 @@ In this `.modal-right` example, we've removed the default `.modal-body` padding 
       </div>
       <div class="modal-body p-0">
         <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-            Cras justo odio
-          </a>
+          <a href="#" class="list-group-item list-group-item-action active" aria-current="true">Cras justo odio</a>
           <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
           <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
           <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
@@ -470,9 +468,7 @@ In this `.modal-right` example, we've removed the default `.modal-body` padding 
       </div>
       <div class="modal-body p-0">
         <div class="list-group list-group-flush">
-          <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
-            Cras justo odio
-          </a>
+          <a href="#" class="list-group-item list-group-item-action active" aria-current="true">Cras justo odio</a>
           <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in</a>
           <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
           <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>

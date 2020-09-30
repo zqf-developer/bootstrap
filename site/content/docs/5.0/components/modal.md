@@ -361,9 +361,7 @@ Our first demo is for `.modal-left`, which also has a vertical `.nav-pills` comp
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modalLeftLabel">Modal left</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <ul class="nav nav-pills flex-column">
@@ -390,9 +388,7 @@ Our first demo is for `.modal-left`, which also has a vertical `.nav-pills` comp
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modalLeftFadeLabel">Modal left</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <ul class="nav nav-pills flex-column">
@@ -448,9 +444,7 @@ In this `.modal-right` example, we've removed the default `.modal-body` padding 
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modalRightLabel">Modal right</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-0">
         <div class="list-group list-group-flush">
@@ -472,9 +466,7 @@ In this `.modal-right` example, we've removed the default `.modal-body` padding 
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="modalRightFadeLabel">Modal right</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body p-0">
         <div class="list-group list-group-flush">

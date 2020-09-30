@@ -53,6 +53,10 @@ You can see the above requirements reflected in this modified RTL starter templa
 </html>
 {{< /highlight >}}
 
+### RTL examples
+
+Get started with one of our several [RTL examples]({{< docsref "/examples/#rtl" >}}).
+
 ## Customize from source
 
 When it comes to [customization]({{< docsref "/customize/sass" >}}), the preferred way is to take advantage of variables, maps, and mixins. This approach works the same for RTL, even if it's post-processed from the compiled files, thanks to [how RTLCSS works](https://rtlcss.com/learn/getting-started/why-rtlcss/).

@@ -7,7 +7,7 @@ aliases: "/examples/"
 
 {{< list-examples.inline >}}
 {{ range $entry := $.Site.Data.examples -}}
-  <h2>{{ $entry.category }}</h2>
+  <h2 id="{{ $entry.category | urlize }}">{{ $entry.category }}</h2>
   <p>{{ $entry.description }}</p>
 
   {{ range $i, $example := $entry.examples -}}

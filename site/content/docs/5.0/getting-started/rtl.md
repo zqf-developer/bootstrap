@@ -1,16 +1,33 @@
 ---
 layout: docs
 title: RTL
-description: Learn how to use Bootstrap on pages using right-to-left language.
+description: Learn how to enable support for right-to-left text in Bootstrap across our layout, components, and utilities.
 group: getting-started
 toc: true
 ---
 
-## How to use
+## Get familiar
 
-There's no major difference with our [introduction]({{< docsref "/getting-started/introduction" >}}) guide. Ensure to set `dir="rtl"` and an appropriate `lang` attribute on `html`, as well as using our RTL compiled CSS.
+We recommend getting familiar with Bootstrap first by reading through our [Getting Started Introduction page]({{< docsref "/getting-started/introduction" >}}). Once you've run through it, continue reading here for how to enable RTL.
+
+You may also want to read up on [the RTLCSS project](https://rtlcss.com/), as it powers our approach to RTL.
+
+## Required HTML
+
+There are two strict requirements for enabling RTL in Bootstrap-powered pages.
+
+1. Set `dir="rtl"` on the `<html>` element.
+2. Add an appropriate `lang` attribute, like `lang="ar"`, on the `<html>` element.
+
+From there, you'll need to include an RTL version of our CSS. For example, here's the stylesheet for our compiled and minified CSS with RTL enabled:
+
+{{< highlight html >}}
+<link rel="stylesheet" href="{{< param "cdn.css_rtl" >}}" integrity="{{< param "cdn.css_rtl_hash" >}}" crossorigin="anonymous">
+{{< /highlight >}}
 
 ### Starter template
+
+You can see the above requirements reflected in this modified RTL starter template.
 
 {{< highlight html >}}
 <!doctype html>
@@ -36,21 +53,19 @@ There's no major difference with our [introduction]({{< docsref "/getting-starte
 </html>
 {{< /highlight >}}
 
-## Customize from sources
+## Customize from source
 
-When it comes to [customization]({{< docsref "/customize/sass" >}}), the preferred way is to take advantage of variables, maps and mixins. It remains accurate for RTL version — even if it's post-processed from the compiled files — thanks to [how RTLCSS works](https://rtlcss.com/learn/getting-started/why-rtlcss/).
+When it comes to [customization]({{< docsref "/customize/sass" >}}), the preferred way is to take advantage of variables, maps, and mixins. This approach works the same for RTL, even if it's post-processed from the compiled files, thanks to [how RTLCSS works](https://rtlcss.com/learn/getting-started/why-rtlcss/).
 
-### Different value for RTL
+### Custom RTL values
 
-Using [RTLCSS value directives](https://rtlcss.com/learn/usage-guide/value-directives/), you can make a variable output a different value for RTL.
-
-For example to decrease the weight for `$font-weight-bold` throughout the codebase, you may use the `/*rtl: {value}*/` syntax:
+Using [RTLCSS value directives](https://rtlcss.com/learn/usage-guide/value-directives/), you can make a variable output a different value for RTL. For example, to decrease the weight for `$font-weight-bold` throughout the codebase, you may use the `/*rtl: {value}*/` syntax:
 
 {{< highlight scss >}}
 $font-weight-bold: 700 #{/* rtl:600 */} !default;
 {{< /highlight >}}
 
-Output:
+Which would ouput to the following for our default CSS and RTL CSS:
 
 {{< highlight css >}}
 /* bootstrap.css */
@@ -66,13 +81,13 @@ dt {
 
 ### Alternative font stack
 
-In the case you're using a custom font, be aware that not all fonts support non-latin alphabet.
+In the case you're using a custom font, be aware that not all fonts support the non-Latin alphabet. To switch from Pan-European to Arabic family, you may need to use `/*rtl:insert: {value}*/` in your font stack to modify the names of font families.
 
-For example, if you use [Neue Helvetica®](https://www.linotype.com/1245395/neue-helvetica-family.html) as your main font (like numerous brands out there), you'd notice it has [a family dedicated to Arabic](https://www.linotype.com/670004/neue-helvetica-arabic-family.html). In order to switch from pan-european to arabic family, you can use the `/*rtl:insert: {value}*/` in your font-stack — assuming your `@font-face` rules define `Helvetica Neue Webfont` and `Helvetica Neue Arabic Webfont` as `font-family`:
+For example, to switch from `Helvetica Neue Webfont` for LTR to `Helvetica Neue Arabic` for RTL, your CSS could look like this:
 
 {{< highlight scss >}}
 $font-family-sans-serif:
-  Helvetica Neue #{"/* rtl:insert:Arabic */"} Webfont,
+  Helvetica Neue #{"/* rtl:insert:Arabic */"},
   // Safari for macOS and iOS (San Francisco)
   -apple-system,
   // Chrome < 56 for macOS (San Francisco)
@@ -91,9 +106,9 @@ $font-family-sans-serif:
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 {{< /highlight >}}
 
-## The breadcrumb case
+## Breadcrumbs
 
-The [breadcrumb separator]({{< docsref "/components/breadcrumb" >}}/#changing-the-separator) is the only case requiring its own brand new variable— namely `$breadcrumb-divider-flipped` —defaulting to `$breadcrumb-divider`.
+The [breadcrumb separator]({{< docsref "/components/breadcrumb" >}}/#changing-the-separator) is the only case requiring its own brand new variable, `$breadcrumb-divider-flipped`, which defaults to `$breadcrumb-divider`.
 
 ## Additional resources
 

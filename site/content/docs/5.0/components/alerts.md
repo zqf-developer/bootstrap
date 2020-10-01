@@ -106,7 +106,8 @@ var bsAlert = new bootstrap.Alert(myAlert)
 
 This makes an alert listen for click events on descendant elements which have the `data-dismiss="alert"` attribute. (Not necessary when using the data-api's auto-initialization.)
 
-<table class="table">
+{{< bs-table "table text-left" >}}
+<table>
   <thead>
     <tr>
       <th>Method</th>
@@ -140,6 +141,7 @@ This makes an alert listen for click events on descendant elements which have th
     </tr>
   </tbody>
 </table>
+{{< /bs-table >}}
 
 {{< highlight js >}}
 var alertNode = document.querySelector('.alert')

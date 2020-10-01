@@ -21,6 +21,11 @@ toc: true
 
 - Introduce `$enable-smooth-scroll`, which applies `scroll-behavior: smooth` globally—except for users asking for reduced motion through `prefers-reduced-motion` media query. [See #31877](https://github.com/twbs/bootstrap/pull/31877)
 
+### JavaScript
+
+- Moved from Popper.js v1 to Popper.js v2
+- Removed `offset` option from our Tooltip/Popover and Dropdown plugins; this can still be achieved using the `popperConfig` parameter.
+
 ## v5.0.0-alpha2
 
 ### Sass
@@ -189,8 +194,6 @@ Changes to our source and compiled JavaScript files.
 
 - Dropped jQuery dependency and rewrote plugins to be in regular JavaScript.
 - Removed underscore from public static methods like `_getInstance()` → `getInstance()`.
-- Moved from Popper.js v1 to Popper.js v2
-- Removed `offset` option from our Tooltip/Popover and Dropdown plugin, this can still be achieve using `popperConfig` parameter.
 
 ### Color system
 

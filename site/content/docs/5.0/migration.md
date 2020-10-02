@@ -11,7 +11,7 @@ toc: true
 
 ### Sass
 
-- Added default parameters to each `border-radius` mixin. [See #31571](https://github.com/twbs/bootstrap/pull/31571).
+- Added default parameters to each `border-radius` mixin. {{< gh value="31571" text="See #31571" >}}.
 - Updated the next breakpoint when targeting only the `xs` breakpoint. [See #31500](https://github.com/twbs/bootstrap/pull/31500).
 - `box-shadow` mixins now allow `null` values and drop `none` from multiple arguments. [See #30394](https://github.com/twbs/bootstrap/pull/30394).
 

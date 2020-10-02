@@ -502,7 +502,6 @@ In this `.modal-right` example, we've removed the default `.modal-body` padding 
 <div class="modal modal-right fade" id="modalRightFade" tabindex="-1" aria-labelledby="modalRightFadeLabel" aria-hidden="true">
   ...
 </div>
-
 {{< /highlight >}}
 
 ## Working with modals

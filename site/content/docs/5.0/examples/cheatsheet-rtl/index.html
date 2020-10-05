@@ -24,7 +24,7 @@ direction: rtl
     <ul class="list-unstyled">
       <li class="my-2">
         <a class="collapsed font-weight-bold d-inline-flex align-items-center" data-toggle="collapse" role="button" aria-expanded="false" href="#contents-collapse" aria-controls="contents-collapse">محتويات</a>
-        <ul class="list-unstyled ps-3 collapse" id="contents-collapse">
+        <ul class="list-unstyled collapse" id="contents-collapse">
           <li><a href="#typography">الطباعة</a></li>
           <li><a href="#images">صور</a></li>
           <li><a href="#tables">جدول</a></li>
@@ -33,7 +33,7 @@ direction: rtl
       </li>
       <li class="my-2">
         <a class="collapsed font-weight-bold d-inline-flex align-items-center" data-toggle="collapse" role="button" aria-expanded="false" href="#forms-collapse" aria-controls="forms-collapse">نماذج</a>
-        <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
+        <ul class="list-unstyled collapse" id="forms-collapse">
           <li><a href="#overview">نظرة عامة</a></li>
           <li><a href="#disabled-forms">أشكال المعاقين</a></li>
           <li><a href="#sizing">تحجيم</a></li>
@@ -43,7 +43,7 @@ direction: rtl
       </li>
       <li class="my-2">
         <a class="collapsed font-weight-bold d-inline-flex align-items-center" data-toggle="collapse" role="button" aria-expanded="false" href="#components-collapse" aria-controls="components-collapse">مكونات</a>
-        <ul class="list-unstyled ps-3 collapse" id="components-collapse">
+        <ul class="list-unstyled collapse" id="components-collapse">
           <li><a href="#alerts">إنذار</a></li>
           <li><a href="#badge">شارة</a></li>
           <li><a href="#breadcrumb">مسار التنقل</a></li>
@@ -611,9 +611,7 @@ direction: rtl
         {{- range (index $.Site.Data "theme-colors") }}
         <div class="alert alert-{{ .name }} alert-dismissible fade show" role="alert">
           تنبيه {{ .name }} بسيط مع <a href="#" class="alert-link">رابط مثال</a>. أعطها نقرة إذا أردت.
-          <button type="button" class="close" data-dismiss="alert" aria-label="قريب">
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <button type="button" class="btn-close" data-dismiss="alert" aria-label="قريب"></button>
         </div>{{ end -}}
         {{< /alerts.inline >}}
         {{< /example >}}
@@ -641,7 +639,7 @@ direction: rtl
         <p class="h3">عنوان المثال <span class="badge bg-success">جديد</span></p>
         <p class="h4">عنوان المثال <span class="badge bg-danger">جديد</span></p>
         <p class="h5">عنوان المثال <span class="badge bg-warning text-dark">جديد</span></p>
-        <p class="h6">عنوان المثال <span class="badge bg-info">جديد</span></p>
+        <p class="h6">عنوان المثال <span class="badge bg-info text-dark">جديد</span></p>
         <p class="h6">عنوان المثال <span class="badge bg-light text-dark">جديد</span></p>
         <p class="h6">عنوان المثال <span class="badge bg-dark">جديد</span></p>
         {{< /example >}}
@@ -649,7 +647,7 @@ direction: rtl
         {{< example show_markup="false" >}}
         {{< badge.inline >}}
         {{- range (index $.Site.Data "theme-colors") }}
-        <span class="badge rounded-pill bg-{{ .name }}{{ if or (eq .name "light") (eq .name "warning") }} text-dark{{ end }}">{{ .name | title }}</span>{{- end -}}
+        <span class="badge rounded-pill bg-{{ .name }}{{ if or (eq .name "light") (eq .name "warning") (eq .name "info") }} text-dark{{ end }}">{{ .name | title }}</span>{{- end -}}
         {{< /badge.inline >}}
         {{< /example >}}
       </div>
@@ -1392,7 +1390,7 @@ direction: rtl
           <div class="progress-bar bg-success w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
         </div>
         <div class="progress mb-3">
-          <div class="progress-bar bg-info w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
+          <div class="progress-bar bg-info text-dark w-50" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">50%</div>
         </div>
         <div class="progress mb-3">
           <div class="progress-bar bg-warning text-dark w-75" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
@@ -1495,9 +1493,7 @@ direction: rtl
             {{< placeholder width="20" height="20" background="#007aff" class="rounded me-2" text="false" title="false" >}}
             <strong class="me-auto">Bootstrap</strong>
             <small class="text-muted">قبل 11 دقيقة</small>
-            <button type="button" class="ms-2 mb-1 close" data-dismiss="toast" aria-label="قريب">
-              <span aria-hidden="true">&times;</span>
-            </button>
+            <button type="button" class="btn-close" data-dismiss="toast" aria-label="قريب"></button>
           </div>
           <div class="toast-body">
             مرحبا بالعالم! هذه رسالة نخب.
@@ -1530,9 +1526,7 @@ direction: rtl
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel">عنوان مشروط</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="قريب">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="قريب"></button>
       </div>
       <div class="modal-body">
         ...
@@ -1549,9 +1543,7 @@ direction: rtl
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="staticBackdropLiveLabel">عنوان مشروط</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="قريب">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="قريب"></button>
       </div>
       <div class="modal-body">
         <p>لن أغلق إذا نقرت خارج لي. لا تحاول حتى الضغط على مفتاح الهروب.</p>
@@ -1568,9 +1560,7 @@ direction: rtl
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalCenteredScrollableTitle">عنوان مشروط</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="قريب">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <button type="button" class="btn-close" data-dismiss="modal" aria-label="قريب"></button>
       </div>
       <div class="modal-body">
         <p>علاقة الشمال والفرنسي لها أن. المحيط الشهيرة البولندي دون أي, لم على مليون الثالث، بالسيطرة, نفس ان واحدة المجتمع والكوري. أي أثره، الأمم دار, مع وسفن وقام سكان انه. كان بهيئة الإمداد هو, بينما تطوير يعادل هذه بل, قد خيار يقوم أعلنت بلا. ما مسرح ٢٠٠٤ عدم, حصدت الصفحة المؤلّفة أخذ هو. هذا عل الدول الفرنسية, معقل مهمّات إذ مدن. تجهيز ألمانيا دار بل.</p>

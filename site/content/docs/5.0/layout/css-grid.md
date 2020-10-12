@@ -7,13 +7,6 @@ group: layout
 toc: true
 ---
 
-{{< callout info >}}
-- How to generate or create dynamic col classes above default of 12? Sass only?
-- Subgrid?
-- Shorthand for 2x2, 3x3, etc grids? .grid-2x12 (2 rows 12 cols)?
-- Wish we could do `cols="6"` and `[cols] { --columns: attr(cols number); }` but it's not supported.
-{{< /callout >}}
-
 ## Overview
 
 Bootstrap's default grid system represents the culmination of over a decade of CSS layout techniques, tried and tested by millions of people. But, it was also created without so many of the modern CSS features and techniques that we're seeing in browsers—features like the new CSS Grid.
@@ -206,6 +199,8 @@ Immediate children elements of `.grid` are grid items, so they'll be sized witho
 {{< /example >}}
 
 ### Columns and gutters
+
+Adjust the number of columns and the gap (gutters).
 
 {{< example class="bd-example-cssgrid" >}}
 <div class="grid" style="--columns: 4; --gap: 5rem;">

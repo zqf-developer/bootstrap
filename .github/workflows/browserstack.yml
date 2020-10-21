@@ -2,7 +2,7 @@ name: BrowserStack
 on: [push]
 env:
   CI: true
-  NODE: 12.x
+  NODE: 15.x
 
 jobs:
   browserstack:

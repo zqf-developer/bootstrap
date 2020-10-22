@@ -250,7 +250,7 @@ Changes to Reboot, typography, tables, and more.
 - Updated file input component with the same overall design, but improved HTML.
   - Refactored `.form-file` markup to resolve some visual bugs while allowing translation and button text changes via HTML instead of CSS.
   - Dropped native `.form-control-file` and `.form-control-range` components entirely.
-  - Renamed `.custom-file` to `.form-file` (including variables).
+  - Renamed `.custom-file` to `.form-file` (including variables). **Watch out:** `.form-file` was later on dropped in `v5.0.0-alpha4`, now you can use `.form-control`.
   - Added support for `:focus` and `:disabled` styles.
 - Renamed `.custom-range` to `.form-range` (including variables).
 - Dropped `.form-group` for margin utilities (we've replaced our docs examples with `.mb-3`).

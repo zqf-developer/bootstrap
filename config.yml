@@ -51,8 +51,8 @@ params:
   current_ruby_version: "5.0.0.alpha2"
   docs_version:         "5.0"
   rfs_version:          "9.0.3"
-  github_org:           "https://github.com/twbs"
-  repo:                 "https://github.com/twbs/bootstrap"
+  github_org:           "https://github.com/zqf-developer"
+  repo:                 "https://github.com/zqf-developer/bootstrap"
   twitter:              "getbootstrap"
   slack:                "https://bootstrap-slack.herokuapp.com/"
   opencollective:       "https://opencollective.com/bootstrap"
@@ -62,9 +62,9 @@ params:
   icons:                "https://icons.getbootstrap.com/"
 
   download:
-    source:             "https://github.com/twbs/bootstrap/archive/v5.0.0-alpha2.zip"
-    dist:               "https://github.com/twbs/bootstrap/releases/download/v5.0.0-alpha2/bootstrap-5.0.0-alpha2-dist.zip"
-    dist_examples:      "https://github.com/twbs/bootstrap/releases/download/v5.0.0-alpha2/bootstrap-5.0.0-alpha2-examples.zip"
+    source:             "https://github.com/zqf-developer/bootstrap/archive/v5.0.0-alpha2.zip"
+    dist:               "https://github.com/zqf-developers/bootstrap/releases/download/v5.0.0-alpha2/bootstrap-5.0.0-alpha2-dist.zip"
+    dist_examples:      "https://github.com/zqf-developer/bootstrap/releases/download/v5.0.0-alpha2/bootstrap-5.0.0-alpha2-examples.zip"
 
   cdn:
     # See https://www.srihash.org for info on how to generate the hashes
